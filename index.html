@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outlet Performance</title>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Outlet performance</h1>
+      <p class="sub" id="period">Loading…</p>
+    </div>
+    <div class="filter" id="filter" role="group" aria-label="Filter by outlet"></div>
+  </header>
+
+  <section class="kpis">
+    <div class="card kpi accent"><div class="label">Total sales</div><div class="value" id="k-sales">–</div><div class="note" id="k-sales-n"></div></div>
+    <div class="card kpi"><div class="label">% of target</div><div class="value" id="k-target">–</div><div class="note" id="k-target-n"></div></div>
+    <div class="card kpi"><div class="label">Orders</div><div class="value" id="k-orders">–</div><div class="note" id="k-orders-n"></div></div>
+    <div class="card kpi"><div class="label">Returns %</div><div class="value" id="k-returns">–</div><div class="note" id="k-returns-n"></div></div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Sales vs target by outlet-week</h2>
+      <p class="hint">Each bar is sales as a % of that week's target. Red is below 90%.</p>
+      <div class="bars" id="bars"></div>
+      <div class="legend">
+        <span><i class="sw" style="background:var(--bar)"></i>At or above 90%</span>
+        <span><i class="sw" style="background:var(--bad)"></i>Below 90%</span>
+        <span><i class="ln" style="border-left:2px solid var(--ink)"></i>100% target</span>
+        <span><i class="ln" style="border-left:1px dashed var(--muted)"></i>90% threshold</span>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Needs attention <span class="count" id="attn-count">0</span></h2>
+      <p class="hint">Outlet-weeks under 90% of target.</p>
+      <ul class="attn" id="attn"></ul>
+    </div>
+  </section>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
